@@ -10,8 +10,6 @@ Hey everyone!
 
 Welcome to my DevOps + AI series where we build an end-to-end DevOps project with an AIOps integration.
 
-A lot of you have been asking: *"when are you going to share a full DevOps project?"*
-
 Well — here we are.
 
 In this series we will:
