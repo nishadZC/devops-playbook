@@ -18,14 +18,14 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy package files and install production dependencies only
+# Copy package files and install production dependencies only and clean npm cache
 COPY package*.json ./
 RUN npm install --production && npm cache clean --force
 
 # Copy built application
 COPY --from=builder /app/dist ./dist
 
-# Create non-root user
+# Create non-root group & user
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nodejs -u 1001
 
