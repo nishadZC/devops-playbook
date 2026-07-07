@@ -27,12 +27,16 @@ kind: Service
 metadata:
   name: frontend
   namespace: boutique
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: external
+    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
 spec:
   selector:
     app: frontend
   ports:
     - protocol: TCP
-      port: 3000
+      port: 80
       targetPort: 3000
-  type: ClusterIP
+  type: LoadBalancer
 
